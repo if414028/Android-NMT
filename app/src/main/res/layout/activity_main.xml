@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -18,41 +18,43 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        app:cardElevation="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_ind"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
                 android:layout_weight="2"
-                android:gravity="left"/>
+                android:gravity="left"
+                android:text="@string/title_ind"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/next_small"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:layout_gravity="center"/>
+                android:src="@drawable/next_small" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_btk"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
                 android:layout_weight="2"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:text="@string/title_btk"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -61,29 +63,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="@dimen/activity_top_margin"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/editTextInputBahsa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_input_language"
-            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_weight="2"
             android:backgroundTint="@android:color/transparent"
             android:focusable="true"
-            android:layout_weight="2"/>
+            android:hint="@string/hint_input_language"
+            android:textColor="@color/colorPrimaryDark" />
 
         <ImageView
             android:id="@+id/buttonClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/cancel"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:visibility="invisible"/>
+            android:src="@drawable/cancel"
+            android:visibility="invisible" />
 
     </LinearLayout>
 
@@ -91,40 +93,44 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_gravity="center"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="50dp"
         android:background="@color/colorLine" />
 
     <Button
         android:id="@+id/buttonTranslate"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_gravity="right"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:textSize="10sp"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_top_margin"
         android:background="@drawable/button_shape"
+        android:elevation="8dp"
+        android:textAllCaps="false"
         android:text="@string/button_terjemahkan"
-        android:textColor="@color/textColorPrimary"/>
+        android:textColor="@color/textColorPrimary"
+        android:textSize="10sp" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardViewHasilTerjemahan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_top_margin"
+        android:minHeight="72dp"
+        android:visibility="invisible"
         app:cardBackgroundColor="@color/colorAccent"
-        android:visibility="invisible">
+        app:cardElevation="2dp">
 
         <TextView
             android:id="@+id/textViewHasilTerjemahan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:textColor="@color/textColorPrimary"
-            android:text="Sample Text hasil terjemahan"/>
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_top_margin"
+            android:text="Sample Text hasil terjemahan"
+            android:textColor="@color/textColorPrimary" />
 
     </android.support.v7.widget.CardView>
 
