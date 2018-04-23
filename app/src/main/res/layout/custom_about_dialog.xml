@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/curve_shap"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Tugas Akhir D4TI-06"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Created by:"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Martha Yosephine Tampubolon"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Kemas Muhammad Rouf"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Reynaldo Leoricci Mikhael"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Version 1.0.0"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+
+
+
+</LinearLayout>
