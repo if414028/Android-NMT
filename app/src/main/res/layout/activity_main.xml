@@ -105,8 +105,8 @@
         android:layout_marginTop="@dimen/activity_top_margin"
         android:background="@drawable/button_shape"
         android:elevation="8dp"
-        android:textAllCaps="false"
         android:text="@string/button_terjemahkan"
+        android:textAllCaps="false"
         android:textColor="@color/textColorPrimary"
         android:textSize="10sp" />
 

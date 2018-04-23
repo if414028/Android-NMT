@@ -79,14 +79,17 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.buttonClear)
     public void clear() {
         editTextInputBahasaTerjemahan.setText(null);
+        cardViewHasilTerjemahan.setVisibility(View.INVISIBLE);
+        buttonClear.setVisibility(View.INVISIBLE);
     }
 
     @OnTextChanged(value = R.id.editTextInputBahsa, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
     void afterTextInputChanged(Editable editable) {
         buttonClear.setVisibility(View.VISIBLE);
+//        cardViewHasilTerjemahan.setVisibility(View.VISIBLE);
     }
 
-    private void callListBahasaIndonesia(){
+    private void callListBahasaIndonesia() {
         APIBahasaIndonesia client = Service.createService(APIBahasaIndonesia.class);
         Call<BahasaIndonesiaResponse> call = client.getListBahasaIndonesia();
         call.enqueue(new Callback<BahasaIndonesiaResponse>() {
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<BahasaIndonesiaResponse> call, Throwable t) {
-                Toast. makeText(getApplicationContext(), "AKSES KE SERVER GAGAL" + t.getMessage(), Toast. LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "AKSES KE SERVER GAGAL" + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
