@@ -5,7 +5,7 @@ import com.example.voldarex.neuralmachinetranslation.model.BahasaIndonesiaRespon
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface APIBahasaIndonesia {
+public interface APITranslation {
 
     @GET("/api/kalimat/ind")
     Call<BahasaIndonesiaResponse> getListBahasaIndonesia();

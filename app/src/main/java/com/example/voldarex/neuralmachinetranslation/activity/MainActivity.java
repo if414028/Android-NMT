@@ -1,5 +1,7 @@
 package com.example.voldarex.neuralmachinetranslation.activity;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -13,8 +15,10 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.voldarex.neuralmachinetranslation.R;
-import com.example.voldarex.neuralmachinetranslation.api.APIBahasaIndonesia;
+import com.example.voldarex.neuralmachinetranslation.api.APITranslation;
 import com.example.voldarex.neuralmachinetranslation.model.BahasaIndonesiaResponse;
+import com.example.voldarex.neuralmachinetranslation.utils.CustomAboutDialogClass;
+import com.example.voldarex.neuralmachinetranslation.utils.CustomExitDialogClass;
 import com.example.voldarex.neuralmachinetranslation.utils.Service;
 
 import butterknife.BindView;
@@ -63,8 +67,16 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_exit) {
-            this.finish();
-            System.exit(0);
+
+            CustomExitDialogClass exitDialog = new CustomExitDialogClass(this);
+            exitDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            exitDialog.show();
+        }
+        else if (id == R.id.action_about){
+            CustomAboutDialogClass aboutDialog = new CustomAboutDialogClass(this);
+            aboutDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            aboutDialog.show();
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -90,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void callListBahasaIndonesia() {
-        APIBahasaIndonesia client = Service.createService(APIBahasaIndonesia.class);
+        APITranslation client = Service.createService(APITranslation.class);
         Call<BahasaIndonesiaResponse> call = client.getListBahasaIndonesia();
         call.enqueue(new Callback<BahasaIndonesiaResponse>() {
             @Override
