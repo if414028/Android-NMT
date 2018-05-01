@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
-        callListBahasaIndonesia();
+        callApiTranslate();
     }
 
     @Override
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 //        cardViewHasilTerjemahan.setVisibility(View.VISIBLE);
     }
 
-    private void callListBahasaIndonesia() {
+    private void callApiTranslate() {
         APITranslation client = Service.createService(APITranslation.class);
         Call<BahasaIndonesiaResponse> call = client.getListBahasaIndonesia();
         call.enqueue(new Callback<BahasaIndonesiaResponse>() {
