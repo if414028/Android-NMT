@@ -98,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
     @OnTextChanged(value = R.id.editTextInputBahsa, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
     void afterTextInputChanged(Editable editable) {
         buttonClear.setVisibility(View.VISIBLE);
-//        cardViewHasilTerjemahan.setVisibility(View.VISIBLE);
     }
 
     private void callApiTranslate() {
