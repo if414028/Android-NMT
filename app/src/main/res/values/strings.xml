@@ -7,6 +7,10 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
+    <string name="font_roboto">roboto</string>
+    <string name="font_stoke">stoke</string>
+    <string name="font_icon">icomoons</string>
+
     <string name="nav_item_home">Home</string>
     <string name="nav_item_friends">Friends</string>
     <string name="nav_item_notifications">Messages</string>

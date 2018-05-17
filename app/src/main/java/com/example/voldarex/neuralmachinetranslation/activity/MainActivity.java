@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.voldarex.neuralmachinetranslation.R;
@@ -19,6 +20,7 @@ import com.example.voldarex.neuralmachinetranslation.api.APITranslation;
 import com.example.voldarex.neuralmachinetranslation.model.BahasaIndonesiaResponse;
 import com.example.voldarex.neuralmachinetranslation.utils.CustomAboutDialogClass;
 import com.example.voldarex.neuralmachinetranslation.utils.CustomExitDialogClass;
+import com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView;
 import com.example.voldarex.neuralmachinetranslation.utils.Service;
 
 import butterknife.BindView;
@@ -33,11 +35,11 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.cardViewHasilTerjemahan)
-    CardView cardViewHasilTerjemahan;
+    LinearLayout cardViewHasilTerjemahan;
     @BindView(R.id.editTextInputBahsa)
     EditText editTextInputBahasaTerjemahan;
     @BindView(R.id.buttonClear)
-    ImageView buttonClear;
+    CustomFontTextView buttonClear;
 
     private Toolbar mToolbar;
 

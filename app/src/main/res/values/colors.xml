@@ -14,6 +14,7 @@
     <color name="colorSubTitle">#757575</color>
     <color name="colorPrimaryBlue">#508ca4</color>
     <color name="colorPrimaryDarkBlue">#3b6678</color>
+    <color name="colorEditText">#cce8cc</color>
 
     <!-- Screens background color-->
     <color name="bg_screen1">#f56476</color>
