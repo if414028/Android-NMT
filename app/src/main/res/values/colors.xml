@@ -10,6 +10,9 @@
 
     <color name="editTextColor">#e8e8ea</color>
     <color name="iconColorDark">#bbbbc2</color>
+    <color name="redButton">#e3170a</color>
+    <color name="redButtonDark">#ba1309</color>
+    <color name="redButtonLight">#fb3f33</color>
 
     <color name="colorPrimary">#607D8B</color>
     <color name="colorPrimaryDark">#455A64</color>
@@ -38,16 +41,16 @@
     <color name="dot_light_screen4">#e4b5fc</color>
 
     <array name="array_dot_active">
-        <item>@color/dot_light_screen2</item>
-        <item>@color/dot_light_screen2</item>
-        <item>@color/dot_light_screen2</item>
+        <item>@color/windowBackground</item>
+        <item>@color/windowBackground</item>
+        <item>@color/windowBackground</item>
         <item>@color/dot_light_screen4</item>
     </array>
 
     <array name="array_dot_inactive">
-        <item>@color/dot_dark_screen2</item>
-        <item>@color/dot_dark_screen2</item>
-        <item>@color/dot_dark_screen2</item>
+        <item>@color/redButtonDark</item>
+        <item>@color/redButtonDark</item>
+        <item>@color/redButtonDark</item>
         <item>@color/dot_dark_screen4</item>
     </array>
 </resources>

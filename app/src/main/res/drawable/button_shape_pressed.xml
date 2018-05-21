@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <stroke
-        android:width="3dp"
-        android:color="@color/dot_dark_screen1" />
-
     <corners android:radius="5dp" />
 
     <padding
@@ -13,6 +9,6 @@
         android:right="8dp"
         android:top="8dp" />
 
-    <solid android:color="@color/colorAccent" />
+    <solid android:color="@color/redButtonDark" />
 
 </shape>

@@ -3,8 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/bg_screen2</item>
-        <item name="colorPrimaryDark">@color/dot_dark_screen2</item>
+        <item name="colorPrimary">@color/redButton</item>
+        <item name="colorPrimaryDark">@color/redButtonDark</item>
         <item name="colorAccent">@color/bg_screen4</item>
     </style>
 
@@ -15,9 +15,9 @@
     <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="colorPrimary">@color/bg_screen2</item>
-        <item name="colorPrimaryDark">@color/dot_dark_screen2</item>
-        <item name="colorAccent">@color/bg_screen4</item>
+        <item name="colorPrimary">@color/redButton</item>
+        <item name="colorPrimaryDark">@color/redButtonDark</item>
+        <item name="colorAccent">@color/bg_screen1</item>
     </style>
 
 </resources>

@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/curve_shap"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
-    <TextView
+    <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -13,9 +14,10 @@
         android:text="Tugas Akhir D4TI-06"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        app:fontName="@string/font_roboto"/>
 
-    <TextView
+    <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -23,33 +25,37 @@
         android:text="Created by:"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        app:fontName="@string/font_roboto"/>
 
-    <TextView
+    <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Martha Yosephine Tampubolon"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        app:fontName="@string/font_roboto"/>
 
-    <TextView
+    <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Kemas Muhammad Rouf"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        app:fontName="@string/font_roboto"/>
 
-    <TextView
+    <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Reynaldo Leoricci Mikhael"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        app:fontName="@string/font_roboto"/>
 
-    <TextView
+    <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -57,7 +63,8 @@
         android:text="Version 1.0.0"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        app:fontName="@string/font_roboto"/>
 
 
 

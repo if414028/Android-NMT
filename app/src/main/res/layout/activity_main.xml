@@ -40,12 +40,16 @@
                 android:textStyle="bold"
                 app:fontName="@string/font_roboto" />
 
-            <ImageView
+            <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:src="@drawable/next_small" />
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="20sp"
+                android:layout_marginTop="2dp"
+                android:text="@string/arrow_right"
+                android:textStyle="bold"
+                app:fontName="@string/font_icon" />
 
             <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
                 android:layout_width="wrap_content"
