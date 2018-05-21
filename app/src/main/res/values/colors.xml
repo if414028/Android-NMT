@@ -8,6 +8,9 @@
     <!--<color name="colorAccent">#74b3ce</color>-->
     <color name="colorLine">#DCDCDC</color>
 
+    <color name="editTextColor">#e8e8ea</color>
+    <color name="iconColorDark">#bbbbc2</color>
+
     <color name="colorPrimary">#607D8B</color>
     <color name="colorPrimaryDark">#455A64</color>
     <color name="colorAccent">#df5b6c</color>

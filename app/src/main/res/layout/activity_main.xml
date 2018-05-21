@@ -31,14 +31,14 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <TextView
+            <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:gravity="left"
                 android:text="@string/title_ind"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:fontName="@string/font_roboto" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -47,14 +47,14 @@
                 android:layout_weight="1"
                 android:src="@drawable/next_small" />
 
-            <TextView
+            <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:gravity="right"
                 android:text="@string/title_btk"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:fontName="@string/font_roboto" />
 
         </LinearLayout>
 
@@ -70,7 +70,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <EditText
+        <com.example.voldarex.neuralmachinetranslation.utils.CustomFontEditTextView
             android:id="@+id/editTextInputBahsa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,7 +81,9 @@
             android:focusable="true"
             android:hint="@string/hint_input_language"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp" />
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:fontName="@string/font_roboto" />
 
         <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
             android:id="@+id/buttonClear"
@@ -91,14 +93,14 @@
             android:layout_weight="1"
             android:gravity="right"
             android:text="@string/close_icon"
-            android:textColor="@color/bg_screen1"
-            android:textSize="24sp"
-            app:fontName="@string/font_icon"
-            android:visibility="invisible"/>
+            android:textColor="@color/iconColorDark"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:fontName="@string/font_icon" />
 
     </LinearLayout>
 
-    <Button
+    <com.example.voldarex.neuralmachinetranslation.utils.CustomFontButton
         android:id="@+id/buttonTranslate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,7 +112,9 @@
         android:text="@string/button_terjemahkan"
         android:textAllCaps="false"
         android:textColor="@color/textColorPrimary"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:fontName="@string/font_roboto" />
 
     <LinearLayout
         android:id="@+id/cardViewHasilTerjemahan"
@@ -124,7 +128,7 @@
         android:orientation="horizontal"
         android:visibility="invisible">
 
-        <TextView
+        <com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView
             android:id="@+id/textViewHasilTerjemahan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -133,10 +137,10 @@
             android:layout_marginTop="@dimen/activity_top_margin"
             android:text="Sample Text hasil terjemahan"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:fontName="@string/font_roboto"/>
 
     </LinearLayout>
-
 
 </LinearLayout>
