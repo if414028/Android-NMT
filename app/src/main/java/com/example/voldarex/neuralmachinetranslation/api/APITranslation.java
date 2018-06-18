@@ -10,11 +10,11 @@ import retrofit2.http.PUT;
 
 public interface APITranslation {
 
-    @GET("/sentence/2")
+    @GET("/sentence/3")
     Call<Sentence> getSentence();
 
     @FormUrlEncoded
-    @PUT("/sentence/2")
+    @PUT("/sentence/3")
     Call<Sentence> putSentence(@Field("text") String text);
 
 }
