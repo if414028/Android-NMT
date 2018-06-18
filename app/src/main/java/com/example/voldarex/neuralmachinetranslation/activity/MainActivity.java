@@ -2,22 +2,20 @@ package com.example.voldarex.neuralmachinetranslation.activity;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.voldarex.neuralmachinetranslation.R;
 import com.example.voldarex.neuralmachinetranslation.api.APITranslation;
-import com.example.voldarex.neuralmachinetranslation.model.BahasaIndonesiaResponse;
+import com.example.voldarex.neuralmachinetranslation.model.Sentence;
 import com.example.voldarex.neuralmachinetranslation.utils.CustomAboutDialogClass;
 import com.example.voldarex.neuralmachinetranslation.utils.CustomExitDialogClass;
 import com.example.voldarex.neuralmachinetranslation.utils.CustomFontTextView;
@@ -34,10 +32,17 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    int id = 3;
+
     @BindView(R.id.cardViewHasilTerjemahan)
     LinearLayout cardViewHasilTerjemahan;
+
     @BindView(R.id.editTextInputBahsa)
     EditText editTextInputBahasaTerjemahan;
+
+    @BindView(R.id.textViewHasilTerjemahan)
+    CustomFontTextView textViewHasilTerjemahan;
+
     @BindView(R.id.buttonClear)
     CustomFontTextView buttonClear;
 
@@ -52,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-
-        callApiTranslate();
     }
 
     @Override
@@ -73,8 +76,7 @@ public class MainActivity extends AppCompatActivity {
             CustomExitDialogClass exitDialog = new CustomExitDialogClass(this);
             exitDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             exitDialog.show();
-        }
-        else if (id == R.id.action_about){
+        } else if (id == R.id.action_about) {
             CustomAboutDialogClass aboutDialog = new CustomAboutDialogClass(this);
             aboutDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             aboutDialog.show();
@@ -87,7 +89,18 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.buttonTranslate)
     public void translate() {
-        cardViewHasilTerjemahan.setVisibility(View.VISIBLE);
+        callApiTranslate();
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getApiTranslate();
+                cardViewHasilTerjemahan.setVisibility(View.VISIBLE);
+            }
+        }, 2000);
+
+
     }
 
     @OnClick(R.id.buttonClear)
@@ -103,17 +116,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void callApiTranslate() {
+        Sentence sentence = new Sentence();
+        String input_bahasa = editTextInputBahasaTerjemahan.getText().toString();
+        sentence.setText(input_bahasa);
         APITranslation client = Service.createService(APITranslation.class);
-        Call<BahasaIndonesiaResponse> call = client.getListBahasaIndonesia();
-        call.enqueue(new Callback<BahasaIndonesiaResponse>() {
+        Call<Sentence> call = client.putSentence(sentence.getText());
+        call.enqueue(new Callback<Sentence>() {
             @Override
-            public void onResponse(Call<BahasaIndonesiaResponse> call, Response<BahasaIndonesiaResponse> response) {
+            public void onResponse(Call<Sentence> call, Response<Sentence> response) {
 
             }
 
             @Override
-            public void onFailure(Call<BahasaIndonesiaResponse> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "AKSES KE SERVER GAGAL" + t.getMessage(), Toast.LENGTH_LONG).show();
+            public void onFailure(Call<Sentence> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void getApiTranslate() {
+        APITranslation client = Service.createService(APITranslation.class);
+        Call<Sentence> call = client.getSentence();
+        call.enqueue(new Callback<Sentence>() {
+            @Override
+            public void onResponse(Call<Sentence> call, Response<Sentence> response) {
+                Sentence sentence = response.body();
+                String output_sentence = sentence.getText().toString();
+                System.out.println(output_sentence);
+                textViewHasilTerjemahan.setText(output_sentence);
+            }
+
+            @Override
+            public void onFailure(Call<Sentence> call, Throwable t) {
+
             }
         });
     }

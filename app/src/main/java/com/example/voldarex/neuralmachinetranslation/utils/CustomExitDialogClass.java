@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.example.voldarex.neuralmachinetranslation.R;
 
-public class CustomExitDialogClass extends Dialog implements View.OnClickListener{
+public class CustomExitDialogClass extends Dialog implements View.OnClickListener {
 
     public Activity c;
     public Dialog d;
