@@ -1,5 +1,7 @@
 package com.example.voldarex.neuralmachinetranslation.activity;
 
+import android.animation.ObjectAnimator;
+import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
@@ -10,8 +12,10 @@ import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import com.example.voldarex.neuralmachinetranslation.R;
 import com.example.voldarex.neuralmachinetranslation.api.APITranslation;
@@ -47,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
     CustomFontTextView buttonClear;
 
     private Toolbar mToolbar;
+
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,14 +95,16 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.buttonTranslate)
     public void translate() {
-        callApiTranslate();
+        progress = ProgressDialog.show(MainActivity.this, "Toba Translate", "Menerjemahkan", true);
 
+        callApiTranslate();
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 getApiTranslate();
                 cardViewHasilTerjemahan.setVisibility(View.VISIBLE);
+                progress.dismiss();
             }
         }, 2000);
 
